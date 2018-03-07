@@ -67,7 +67,7 @@ auth.post('/register', (req, res) => {
             user.hash_password = undefined
             res.status(200).json({success: true, message: 'New user registered successfuly!', content: user})
           }
-          })
+        })
       } else {
         res.status(412).json({success: false, message: 'Email already used..'})
       }
