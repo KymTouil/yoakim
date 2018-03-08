@@ -1,0 +1,40 @@
+*{
+  color:rgb(243, 240, 230)
+}
+
+.bg{
+  background: url('images/back.png') no-repeat center;
+  height: 115vh;
+  background-size: cover;
+  opacity: 5
+}
+
+.form-container{
+  position: relative;
+  background-color: rgba(52,73,94,4);
+  border:0px solid rgba(42, 27, 42, 0.418);
+  padding:100px 60px;
+  margin-top: 9vh;
+  box-shadow: -1px 4px 26px 5px rgb(92, 91, 89);
+  border-radius: 5px;
+  width: 450px;
+  margin: 9vh auto;
+}
+
+
+.logo{
+  width: 150px;
+  height: 100px;
+  border-radius: 5px;
+  overflow: hidden;
+  position: absolute;
+  top: -25px;
+  left: calc(50% - 75px );
+  box-shadow: 0px 4px 24px rgb(36, 35, 35)
+}
+
+
+button{
+  background-color:rgb(20, 67, 223);
+  transform: translateY(4px);
+}
