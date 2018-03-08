@@ -36,7 +36,7 @@ export default {
               .then(
                   res => {
                       console.log(res.data)
-                      this.$router.push({ path: 'Login' })
+                      this.$router.push({ path: '/' })
                   },
                   res => {
                       console.log(res.data)

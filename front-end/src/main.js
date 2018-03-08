@@ -3,8 +3,13 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import { SSL_OP_COOKIE_EXCHANGE } from 'constants';
 
 Vue.config.productionTip = false
+
+Vue.http.interceptors.push(function(request) {
+  request.headers.set('Authorization', localStorage.getItem('token'));
+});
 
 /* eslint-disable no-new */
 new Vue({

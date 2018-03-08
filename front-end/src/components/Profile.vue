@@ -17,8 +17,12 @@ export default {
   },
   methods: {
       getMessages: function() {
-        let _token = localStorage.getItem('token');
-        this.$http.get('http://localhost:1407/messages/user', { headers: { Authorization: _token } })
+        let config = {
+            headers: {
+                'Authorization': localStorage.getItem('token')
+            }
+        };
+        this.$http.get('http://localhost:1407/messages/user')
             .then(
                 res => {
                     this.messages = res.data.content

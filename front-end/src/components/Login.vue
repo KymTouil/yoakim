@@ -34,7 +34,7 @@ export default {
             .then(
                 res => {
                     localStorage.setItem('token', res.data.content.token)
-                    this.$router.push({ path: 'Profile' })
+                    this.$router.push({ path: '/profile' })
                 },
                 res => {
                     console.log(res.data)
