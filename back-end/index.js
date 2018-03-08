@@ -105,5 +105,5 @@ app.use('/*', (req, res) => {
 
 // LAUNCHING SERVER TO THE MOON
 // On défini un port depuis le fichier de config .env  sinon si la variable n'existe pas on utilise le port 8080
-let port = process.env.PORT || 8080;
+let port = process.env.PORT || 1407;
 app.listen(port, () => console.log('App listen on port: ' + port + ' ...'))

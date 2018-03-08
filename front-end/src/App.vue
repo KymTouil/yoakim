@@ -1,6 +1,5 @@
 <template>
   <div id="app" class="container-fluid bg">
-    
     <router-view/>
   </div>
 </template>
