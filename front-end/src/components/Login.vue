@@ -33,7 +33,8 @@ export default {
         this.$http.post('http://localhost:1407/auth/login', data)
             .then(
                 res => {
-                    console.log(res.data)
+                    localStorage.setItem('token', res.data.content.token)
+                    this.$router.push({ path: 'Profile' })
                 },
                 res => {
                     console.log(res.data)

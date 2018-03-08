@@ -25,16 +25,18 @@ export default {
     }
   },
   methods: {
-      register: function() {
+      register: function(e) {
+        e.preventDefault();
         if (this.newUser.password == this.newUser.passwordVerif) {
           let data = {
               email: this.newUser.email,
               password: this.newUser.password
           };
-          this.$http.get('http://localhost:1407/auth/register', data)
+          this.$http.post('http://localhost:1407/auth/register', data)
               .then(
                   res => {
                       console.log(res.data)
+                      this.$router.push({ path: 'Login' })
                   },
                   res => {
                       console.log(res.data)

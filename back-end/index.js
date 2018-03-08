@@ -34,7 +34,7 @@ app.use(morgan('dev'))
 app.use(function (req, res, next) {
   res.header(`Access-Control-Allow-Origin`, `*`);
   res.header(`Access-Control-Allow-Methods`, `GET,PUT,POST,DELETE`);
-  res.header(`Access-Control-Allow-Headers`, `Content-Type`);
+  res.header(`Access-Control-Allow-Headers`, `Content-Type, Authorization`);
   next()
 })
 
@@ -72,6 +72,7 @@ app.use('/auth', auth)
 // Ce dernier correspond au token décodé, on retrouve le payload (ex: email utilisateur, id etc..)
 // on appelle next(); pour dire que tout s'est bien passé et qu'on peut passer à la suite (circulez svp!)
 let verifyToken = (req, res, next) => {
+  console.log('req', req.headers);
   if (req.headers && req.headers.authorization && req.headers.authorization.split(' ')[0] === process.env.AUTHBEARER) {
     jwt.verify(req.headers.authorization.split(' ')[1], process.env.SECRETKEY, function (err, decode) {
       if (err) res.status(500).json({success: false, message: err})
