@@ -4,41 +4,37 @@ ROUTES POSTMAN:
 
 POST http://localhost:1407/auth/login
 
-body: email
+        body: email
         password
         
 POST http://localhost:1407/auth/register
 
-  body: email
+        body: email
         password
+
+Below routes require
+
+        header: Authorization: token
 
 GET http://localhost:1407/users
 
-  header: Authorization: token
 
 GET http://localhost:1407/messages
 
-  header: Authorization: token
   
 GET http://localhost:1407/messages/user
 
-  header: Authorization: token
   
 POST http://localhost:1407/messages
   
-  header: Authorization: token
-  
-  body: userId
+        body: userId
         message
 
 PUT http://localhost:1407/messages/:id
   
-  header: Authorization: token
-  
-  body: userId
+        body: userId
         message
         
 DELETE http://localhost:1407/messages/:id
   
-  header: Authorization: token
   
