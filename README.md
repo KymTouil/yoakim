@@ -19,6 +19,11 @@ GET http://localhost:1407/messages
 GET http://localhost:1407/messages/user
   header: Authorization: token
   
+POST http://localhost:1407/messages/:id
+  header: Authorization: token
+  body: userId
+        message
+
 PUT http://localhost:1407/messages/:id
   header: Authorization: token
   body: userId
